@@ -24,3 +24,11 @@ ln -sf /usr/share/backgrounds/bluefin/10-bluefin-night.jxl /usr/share/background
 sed -i '/<entry name="launchers" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:kitty.desktop,applications:emacs.desktop<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml
 
 sed -i '/<entry name="favorites" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.gnome.Ptyxis.desktop,applications:kitty.desktop,applications:emacs.desktop,applications:org.kde.kate.desktop,applications:io.github.dvlv.boxbuddyrs.desktop,applications:org.kde.kdeconnect.app.desktop,applications:firewall-config.desktop<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/config/main.xml
+
+
+
+KERNEL_SUFFIX=""
+
+QUALIFIED_KERNEL="$(rpm -qa | grep -P 'kernel-(|'"$KERNEL_SUFFIX"'-)(\d+\.\d+\.\d+)' | sed -E 's/kernel-(|'"$KERNEL_SUFFIX"'-)//')"
+/usr/bin/dracut --no-hostonly --kver "$QUALIFIED_KERNEL" --reproducible -v --add ostree -f "/lib/modules/$QUALIFIED_KERNEL/initramfs.img"
+chmod 0600 "/lib/modules/$QUALIFIED_KERNEL/initramfs.img"
