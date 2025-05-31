@@ -25,7 +25,11 @@ sed -i '/<entry name="launchers" type="StringList">/,/<\/entry>/ s/<default>[^<]
 
 sed -i '/<entry name="favorites" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.gnome.Ptyxis.desktop,applications:kitty.desktop,applications:emacs.desktop,applications:org.kde.kate.desktop,applications:io.github.dvlv.boxbuddyrs.desktop,applications:org.kde.kdeconnect.app.desktop,applications:firewall-config.desktop<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/config/main.xml
 
+dnf5 -y install emacs zathura zathura-plugins-all kitty neovim gh
 
+dnf5 -y install fira-code-fonts baekmuk-bdf-fonts baekmuk-batang-fonts adobe-source-han-sans-kr-fonts adobe-source-han-serif-kr-fonts google-noto-sans-cjk-fonts google-noto-serif-cjk-fonts google-noto-sans-cjk-vf-fonts google-noto-serif-cjk-vf-fonts google-roboto-fonts google-roboto-mono-fonts
+
+fc-cache -fv
 
 KERNEL_SUFFIX=""
 
