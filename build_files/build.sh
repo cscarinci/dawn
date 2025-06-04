@@ -27,6 +27,8 @@ sed -i '/<entry name="favorites" type="StringList">/,/<\/entry>/ s/<default>[^<]
 
 dnf5 -y install emacs zathura zathura-plugins-all kitty neovim gh
 
+dnf5 -y install fzf zoxide atuin bat
+
 dnf5 -y install fira-code-fonts baekmuk-bdf-fonts baekmuk-batang-fonts adobe-source-han-sans-kr-fonts adobe-source-han-serif-kr-fonts google-noto-sans-cjk-fonts google-noto-serif-cjk-fonts google-noto-sans-cjk-vf-fonts google-noto-serif-cjk-vf-fonts google-roboto-fonts google-roboto-mono-fonts
 
 fc-cache -fv
