@@ -1,7 +1,6 @@
 # Dawn
 
-My custom image of Aurora, with dinosaurs included. Now with dev tools.
-
+My custom image of Aurora, with dinosaurs included.
 
 ## Instructions
 
@@ -14,6 +13,7 @@ sudo bootc switch --enforce-container-sigpolicy ghcr.io/cscarinci/dawn:latest
 Or, generate an iso file with [BlueBuild](https://github.com/blue-build/cli/):
 
 ```bash
+podman run --pull always --rm ghcr.io/blue-build/cli:latest-installer | bash
 sudo bluebuild generate-iso --iso-name dawn.iso image ghcr.io/cscarinci/dawn
 ```
 
