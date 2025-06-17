@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf5 -y remove aurora-plymouth aurora-backgrounds aurora-cli-logos aurora-fastfetch kcm_ublue
+dnf5 -y remove aurora-kde-config aurora-plymouth aurora-backgrounds aurora-cli-logos aurora-fastfetch kcm_ublue
 
 dnf5 -y swap --repo=copr:copr.fedorainfracloud.org:ublue-os:packages aurora-logos bluefin-logos
 
